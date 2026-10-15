@@ -1,25 +1,21 @@
+
 #include <stdio.h>
-#include <stdbool.h>
 
 int main() {
-    float distance, fare = 100;
-    bool member;
+    int distance, member;
+    int fare = 100;
 
-    printf("Distance: ");
-    scanf("%f", &distance);
-
-    printf("Member (1 for true, 0 for false): ");
-    scanf("%d", (int *)&member);
+    scanf("%d %d", &distance, &member);
 
     if (distance > 10) {
-        fare += (distance - 10) * 20;
+        fare = fare + (distance - 10) * 20;
     }
 
-    if (member) {
-        fare = fare * 0.90;
+    if (member == 1) {
+        fare = fare - (fare * 10 / 100);
     }
 
-    printf("Final Fare: ₹%.0f\n", fare);
+    printf("Final Fare: Rs.%d", fare);
 
     return 0;
 }
